@@ -15750,8 +15750,50 @@
             // 逻辑：查找 href 是首页链接或者内容是 TOP 的链接
             const homeLinks = document.querySelectorAll('a[href="https://sakeosan.wixsite.com/mirrorribbons"], a[href="./"], li[data-testid="menuItemDepth0"] a');
 
-            const v = document.getElementById('comp-m4cgh0ee_video');
+            const STORY_VIDEO_ID = 'videoContainer_comp-m4cgh0ee';
+            // 3. 视频控制函数 (主要修复点在这里)
+        function toggleVideo(action) {
+            const videoContainer = document.getElementById(STORY_VIDEO_ID);
+            if (!videoContainer) return;
+            
+            const videoElement = videoContainer.querySelector('video');
+            if (!videoElement) return;
 
+            if (action === 'play') {
+                videoElement.muted = true;
+                
+                // 强制触发加载，等待媒体数据准备就绪
+                videoElement.load(); 
+                
+                // 【核心修复】等待 'canplaythrough' 事件，确保视频资源加载完毕
+                videoElement.addEventListener('canplaythrough', function attemptPlay() {
+                    videoElement.currentTime = 0; // 从头开始
+                    const playPromise = videoElement.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            // 播放成功，移除监听器
+                            videoElement.removeEventListener('canplaythrough', attemptPlay);
+                            console.log("✅ Story Video Playback started successfully.");
+                        }).catch(error => {
+                            // 优雅地处理 AbortError 和其他播放失败（例如用户未交互）
+                            if (error.name !== "AbortError") {
+                                console.error("❌ Video Playback failed (not AbortError):", error.name);
+                            }
+                            // 如果是 AbortError，让 Wix 自己的机制去处理，或者尝试在稍后再次播放
+                            // 重要的是，我们捕获了错误，避免了控制台的 Uncaught 报错
+                        });
+                    }
+                }, { once: true }); // 只监听一次
+                
+            } else {
+                // 暂停和重置
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            }
+        }
+        
+            
             // 定义切换到 Story 的函数
             function showStory(e) {
                 if (e) e.preventDefault(); // 阻止浏览器跳转
@@ -15763,7 +15805,7 @@
                     
                     
                 }
-                setTimeout(v.play(), 1000);
+                toggleVideo('play');
                 
 
                 // 修复：如果 Story 页面有特定的背景层，可能需要手动处理背景切换
