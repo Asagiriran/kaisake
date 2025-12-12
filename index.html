@@ -15760,11 +15760,11 @@
                     storyPage.style.display = 'block';
                     storyPage.style.visibility = 'visible'; // 确保可见
                     storyPage.style.opacity = '1'; // 确保不透明
-                    v.muted = true;
-                    v.play();
+                    
                     
                 }
-                window.scrollTo(0, 0); //以此回到顶部
+                v.muted = true;
+                v.play();
 
                 // 修复：如果 Story 页面有特定的背景层，可能需要手动处理背景切换
                 // 这里只是基础切换，Wix 的复杂背景可能需要额外处理
@@ -15779,7 +15779,7 @@
                     mainPage.style.display = 'block';
                     mainPage.style.visibility = 'visible';
                 }
-                window.scrollTo(0, 0);
+                
             }
 
             // 给所有 Story 链接添加点击事件
