@@ -15750,6 +15750,8 @@
             // 逻辑：查找 href 是首页链接或者内容是 TOP 的链接
             const homeLinks = document.querySelectorAll('a[href="https://sakeosan.wixsite.com/mirrorribbons"], a[href="./"], li[data-testid="menuItemDepth0"] a');
 
+            const v = document.querySelector('video');
+
             // 定义切换到 Story 的函数
             function showStory(e) {
                 if (e) e.preventDefault(); // 阻止浏览器跳转
@@ -15758,6 +15760,9 @@
                     storyPage.style.display = 'block';
                     storyPage.style.visibility = 'visible'; // 确保可见
                     storyPage.style.opacity = '1'; // 确保不透明
+                    v.muted = true;
+                    v.play();
+                    
                 }
                 window.scrollTo(0, 0); //以此回到顶部
 
