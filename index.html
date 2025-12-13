@@ -13665,8 +13665,8 @@
             /* 最小宽度 */
 
             /* 字体设置 */
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 16px;
+            font-family: "Noto Serif SC", Helvetica, Arial, sans-serif;
+            font-size: 20px;
             font-weight: normal;
             /* 字体不加粗 */
             letter-spacing: 0.5px;
@@ -13708,7 +13708,7 @@
             }
         }
 
-        .story-section h2{
+        .story-section h2 {
             opacity: 0;
             /* 初始隐藏 */
             animation: fadeInUp 1.2s ease-out forwards;
@@ -13717,7 +13717,7 @@
             /* 延迟0.3秒开始 */
         }
 
-        .story-section p{
+        .story-section p {
             opacity: 0;
             /* 初始隐藏 */
             animation: fadeInUp 1.2s ease-out forwards;
@@ -13732,6 +13732,184 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- 引入手写字体以还原 "Profil" 的效果 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Shippori+Mincho:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 主容器 */
+        .profil-container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            gap: 60px;
+            align-items: center;
+            /* 垂直居中对齐 */
+            Margin: auto;
+            padding-top: 40px;
+            padding-bottom: 40px
+        }
+
+        /* 左侧栏 */
+        .left-column {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 圆形头像 */
+        .avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* 这里使用了一个占位图，请替换为你自己的图片链接 */
+            background-image: url('https://static.wixstatic.com/media/369559_454830766c5847d98827dbd96ca85f1f~mv2.jpg/v1/fill/w_215,h_216,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/RmzJhOU6_400x400.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .role-en {
+            font-size: 14px;
+            color: #5d707f;
+            /* 稍微带蓝灰的颜色 */
+            margin-bottom: 30px;
+            font-family: serif;
+        }
+
+        .personal-info {
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;
+            font-feature-settings: 'halt' 1;
+            letter-spacing: 0.05em;
+        }
+
+        .fun-fact {
+            font-size: 13px;
+            line-height: 1.6;
+            font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;
+            font-feature-settings: 'halt' 1;
+            letter-spacing: 0.05em;
+        }
+
+        /* 右侧栏 */
+        .right-column {
+            flex: 1.4;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Pinyon Script', cursive;
+            /* 手写字体 */
+            font-size: 48px;
+            font-weight: normal;
+            margin-bottom: 5px;
+            color: #333;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .divider {
+            width: 30px;
+            height: 2px;
+            background-color: #000;
+            margin: 0 auto 30px auto;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.8;
+            font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;
+            font-feature-settings: 'halt' 1;
+            letter-spacing: 0.05em;
+            margin-bottom: 30px;
+        }
+
+        /* 链接颜色样式 */
+        .link-highlight {
+            color: #ffb085;
+            text-decoration: none;
+            border-bottom: 1px solid #ffb085;
+        }
+
+        .social-links {
+            font-size: 18px;
+            margin-top: 40px;
+            font-family: "Times New Roman", "Noto Serif SC", serif;
+        }
+
+        .social-links a {
+            color: #ffb085;
+            /* 图片中的浅橙色/粉色 */
+            text-decoration: none;
+            border-bottom: 1px solid #ffb085;
+            margin: 0 5px;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        .social-separator {
+            color: #ccc;
+            margin: 0 5px;
+        }
+
+        .links-row {
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <style>
+        .img-btn {
+            border-style: solid;
+            border-width: 7px;
+            border-color: WHITE;
+            /* 去掉边框 */
+            background-color: transparent;
+            /* 背景透明 */
+            padding: 0;
+            /* 去掉内边距 */
+            cursor: pointer;
+            /* 鼠标放上去变小手 */
+            outline: none;
+            /* 去掉点击时的蓝框（可选） */
+            transition: all 0.3s ease;
+
+        }
+
+        /* 调整内部图片大小 */
+        .img-btn img {
+            width: auto;
+            height: 500px;
+            display: block;
+            /* 消除底部微小间隙 */
+        }
+
+        /* 可选：鼠标悬停效果 */
+        .img-btn:hover {
+            transform: translateY(-5px);
+
+            /* 添加阴影：水平偏移 垂直偏移 模糊度 颜色 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
 </head>
 
 <body class=''>
@@ -13843,9 +14021,9 @@
                                         data-testid="mesh-container-content">
                                         <!--$-->
                                         <div id="comp-lfg7xrfw" class="MazNVa comp-lfg7xrfw wixui-image rYiAuL"><a
-                                                data-testid="linkElement"
-                                                href="https://sakeosan.wixsite.com/mirrorribbons" target="_self"
-                                                class="j7pOnl"><img fetchpriority="high" sizes="171px"
+                                                href="javascript:void(0);"
+                                                onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                                                ><img fetchpriority="high" sizes="171px"
                                                     srcSet="https://static.wixstatic.com/media/369559_44ec6ad8f86e4209a342ba064e8e1770~mv2.png/v1/fill/w_171,h_64,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_white.png 1x, https://static.wixstatic.com/media/369559_44ec6ad8f86e4209a342ba064e8e1770~mv2.png/v1/fill/w_342,h_128,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_white.png 2x"
                                                     id="img_comp-lfg7xrfw"
                                                     src="https://static.wixstatic.com/media/369559_44ec6ad8f86e4209a342ba064e8e1770~mv2.png/v1/fill/w_171,h_64,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_white.png"
@@ -14747,61 +14925,125 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="container" style="
-                                                                text-align: center; /* 让内部的行内元素（如按钮）居中 */
-                                                                padding: 20px 0;    /* 通过上下内边距来控制垂直位置 */">
+                                                                            text-align: center; /* 让内部的行内元素（如按钮）居中 */
+                                                                            padding: 20px 0;    /* 通过上下内边距来控制垂直位置 */">
 
                                                                             <button class="btn-more"
-                                                                                onclick="window.open('https://sakeosan.wixsite.com/mirrorribbons/general-clean')">more</button>
+                                                                                onclick="window.open('https://sakeosan.wixsite.com/mirrorribbons/general-clean')">More</button>
                                                                         </div>
 
                                                                     </div>
 
                                                                 </div>
-                                                                <div id="comp-lgaz277b"
-                                                                    style="margin: 0 auto;padding:20px 20px"
-                                                                    class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgaz277b wixui-rich-text"
-                                                                    data-testid="richTextElement">
-                                                                    <h2 class="font_4 wixui-rich-text__text"
-                                                                        style="line-height:1.35em; text-align:center; font-size:40px;">
-                                                                        <span
-                                                                            class="color_24 wixui-rich-text__text"><span
-                                                                                style="letter-spacing:normal;"
-                                                                                class="wixui-rich-text__text">Other</span></span>
-                                                                    </h2>
-                                                                </div><!--/$--><!--$-->
-                                                                <div id="comp-lgb00if4"
-                                                                    style="margin: 0 auto;padding-bottom:20px;"
-                                                                    class="MazNVa comp-lgb00if4 wixui-image rYiAuL"><a
-                                                                        data-testid="linkElement"
-                                                                        href="https://sasasakeee.fanbox.cc/"
-                                                                        target="_blank" rel="noreferrer noopener"
-                                                                        class="j7pOnl"><img loading="lazy" sizes="600px"
-                                                                            srcSet="https://static.wixstatic.com/media/369559_54ed05da5e8f42268200799f5a93d080~mv2.jpg/v1/fill/w_600,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FANBOX%E3%83%90%E3%83%8A%E3%83%BC.jpg 1x, https://static.wixstatic.com/media/369559_54ed05da5e8f42268200799f5a93d080~mv2.jpg/v1/fill/w_1200,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/FANBOX%E3%83%90%E3%83%8A%E3%83%BC.jpg 2x"
-                                                                            id="img_comp-lgb00if4"
-                                                                            src="https://static.wixstatic.com/media/369559_54ed05da5e8f42268200799f5a93d080~mv2.jpg/v1/fill/w_600,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/FANBOX%E3%83%90%E3%83%8A%E3%83%BC.jpg"
-                                                                            alt="FANBOX" style="object-fit:cover"
-                                                                            class="BI8PVQ Tj01hh" width="600"
-                                                                            height="200" /></a></div><!--/$--><!--$-->
-                                                                <div id="comp-lgb010s5"
-                                                                    style="margin: 0 auto;padding-bottom: 20px;"
-                                                                    class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgb010s5 wixui-rich-text"
-                                                                    data-testid="richTextElement">
-                                                                    <p class="font_9 wixui-rich-text__text"
-                                                                        style="line-height:1.88em; font-size:15px;">
-                                                                        pixivFANBOXにて創作活動を支援いただける方を募集しています。</p>
-
-                                                                    <p class="font_9 wixui-rich-text__text"
-                                                                        style="line-height:1.88em; font-size:15px;">
-                                                                        無料公開記事に加え限定内容をまとめた有料記事やご支援いただけるプランにより豪華な特典をご用意しています。
-                                                                    </p>
-
-                                                                    <p class="font_9 wixui-rich-text__text"
-                                                                        style="line-height:1.88em; font-size:15px;">
-                                                                        ご支援金は今後の活動資金としてよりさまざまな創作を届けられるよう活用いたします。</p>
-                                                                </div><!--/$-->
+                                                                <!--/$-->
                                                             </div>
+
                                                         </div>
                                                     </section><!--/$--><!--$-->
+                                                    <div id="Book-page"
+                                                        style="background-color: #E8E6E6;padding-bottom: 40px">
+                                                        <div id="comp-lgaz277b" style="margin: 0 auto;padding:20px 20px"
+                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgaz277b wixui-rich-text"
+                                                            data-testid="richTextElement">
+                                                            <h2 class="font_4 wixui-rich-text__text"
+                                                                style="line-height:1.35em; text-align:center; font-size:40px;">
+                                                                <span class="color_24 wixui-rich-text__text"><span
+                                                                        style="letter-spacing:normal;"
+                                                                        class="wixui-rich-text__text">Book</span></span>
+                                                            </h2>
+                                                        </div><!--/$--><!--$-->
+                                                        <div id="book-btn-container" style="
+                                                                align-items: center;
+                                                                justify-content: center; 
+                                                                gap:100px;
+                                                                display: flex;
+                                                            ">
+
+                                                            <button class="img-btn"
+                                                                onclick="window.open('https://utopiamodoki.booth.pm/items/6612782')">
+                                                                <img src="https://booth.pximg.net/7d40f0cc-aa87-4ff9-836b-a16ec27544b0/i/6612782/87be69f1-e209-4feb-b013-87ae604767d7.jpg"
+                                                                    alt="功能图标">
+                                                            </button>
+                                                            <button class="img-btn"
+                                                                onclick="window.open('https://utopiamodoki.booth.pm/items/6612782')">
+                                                                <img src="https://booth.pximg.net/7d40f0cc-aa87-4ff9-836b-a16ec27544b0/i/6612782/a1b0027d-d656-41ac-9989-b91d9a4cdfaa.jpg"
+                                                                    alt="功能图标">
+                                                            </button>
+                                                            <button class="img-btn"
+                                                                onclick="window.open('https://www.melonbooks.co.jp/detail/detail.php?product_id=3348195')">
+                                                                <img src="https://melonbooks.akamaized.net/user_data/packages/resize_image.php?image=212001553624.jpg"
+                                                                    alt="功能图标">
+                                                            </button>
+
+                                                        </div>
+                                                        <div class="container" style="
+                                                                            text-align: center; /* 让内部的行内元素（如按钮）居中 */
+                                                                            padding-top:40px;    /* 通过上下内边距来控制垂直位置 */">
+
+                                                            <button class="btn-more"
+                                                                onclick="window.open('https://utopiamodoki.booth.pm/')">Goods</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="Profil" class="profil-container">
+                                                        <!-- 左侧部分 -->
+                                                        <div class="left-column">
+                                                            <img src="https://static.wixstatic.com/media/369559_454830766c5847d98827dbd96ca85f1f~mv2.jpg/v1/fill/w_215,h_216,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/RmzJhOU6_400x400.jpg"
+                                                                alt="Avatar" class="avatar">
+
+                                                            <h2 class="name">界さけ</h2>
+                                                            <p class="role-en">Kaisake - Illust & Graphic Designer</p>
+
+                                                            <div class="personal-info">
+                                                                11月13日出生<br>
+                                                                东京在住<br>
+                                                                插画师
+                                                            </div>
+
+                                                            <p class="fun-fact">喜好是駄菓子和酸的东西。</p>
+                                                        </div>
+
+                                                        <!-- 右侧部分 -->
+                                                        <div class="right-column">
+                                                            <h2 class="section-title">Profil</h2>
+                                                            <div class="divider"></div>
+
+                                                            <div class="description">
+                                                                <p>从事插画师的工作，也在制作游戏。</p>
+
+                                                                <p>代表作「Elysion -feeling of release-」 (<a
+                                                                        href="https://skpoll.wixsite.com/elysion-game" target="_blank"
+                                                                        class="link-highlight">Web</a>)<br>&nbsp</p>
+                                                                <p>活动范围广泛，角色设计 / 周边制作 / 插画绘制等。<br>&nbsp</p>
+                                                                <p>喜欢故事性的绘画，致力于创作能够让人联想到画中世界的作品。<br>&nbsp</p>
+                                                                <p>擅长描绘可爱的年幼少女和充满日常气息的女孩子。</p>
+                                                                <p>特别是带有忧郁感、或是淘气可爱的风格。</p>
+                                                            </div>
+
+                                                            <div class="social-links">
+                                                                <div class="links-row">
+                                                                    <a
+                                                                        href="https://sakeosan.wixsite.com/utp-portfolio" target="_blank">画师官网</a>
+                                                                    <span class="social-separator">/</span>
+                                                                    <a href="https://twitter.com/sasasakeee" target="_blank">Twitter</a>
+                                                                    <span class="social-separator">/</span>
+                                                                    <a
+                                                                        href="https://www.pixiv.net/users/3438728" target="_blank">Pixiv</a>
+                                                                    <span class="social-separator">/</span>
+                                                                    <a
+                                                                        href="https://www.instagram.com/sasasakeee/" target="_blank">Instagram</a>
+                                                                </div>
+                                                                <div class="links-row">
+                                                                    <a href="https://sasasakeee.fanbox.cc/" target="_blank">FANBOX</a>
+                                                                    <span class="social-separator">/</span>
+                                                                    <a
+                                                                        href="https://www.youtube.com/channel/UC2hAopSeVt-3FN-drju7djw" target="_blank">Youtube</a>
+                                                                    <span class="social-separator">/</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div><!--/$-->
@@ -15214,7 +15456,7 @@
                                                                                                     class="wixui-rich-text__text"><span
                                                                                                         style="font-size:36px;"
                                                                                                         class="wixui-rich-text__text"><span
-                                                                                                            style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
+                                                                                                            style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
                                                                                                             class="wixui-rich-text__text">起</span></span></span></span>
                                                                                         </h2>
                                                                                     </div><!--/$--><!--$-->
@@ -15234,10 +15476,10 @@
                                                                                                             class="wixui-rich-text__text"><span
                                                                                                                 style="font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;"
                                                                                                                 class="wixui-rich-text__text"><span
-                                                                                                                    style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                                    style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                                     class="wixui-rich-text__text">青蓝和朱杏曾共同度过幸福的日常，与家人一起的时光总是充满欢笑。<br
                                                                                                                         class="wixui-rich-text__text">
-                                                                                                                    某天，母亲紫织送给两人成对的缎带作为礼物。<br
+                                                                                                                    某天，母亲紫织送给两人成对的缎带。<br
                                                                                                                         class="wixui-rich-text__text">
                                                                                                                     5岁那年，一家人移居到了英国。<br
                                                                                                                         class="wixui-rich-text__text">
@@ -15310,7 +15552,7 @@
                                                                                                     class="wixui-rich-text__text"><span
                                                                                                         style="font-size:36px;"
                                                                                                         class="wixui-rich-text__text"><span
-                                                                                                            style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                            style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                             class="wixui-rich-text__text">承</span></span></span></span>
                                                                                         </h2>
                                                                                     </div><!--/$--><!--$-->
@@ -15328,7 +15570,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">青蓝因事故离世，朱杏沉浸在孤独之中。</span></span></span></span></span></span>
@@ -15345,7 +15587,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">即便在镜中呼唤着「我在这里哦」，朱杏也无法感觉到青蓝的存在。</span></span></span></span></span></span>
@@ -15362,7 +15604,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">一天，承载着青蓝思念的泰迪熊「蓝」动了起来，依偎在朱杏身旁。</span></span></span></span></span></span>
@@ -15496,7 +15738,7 @@
                                                                                                     class="wixui-rich-text__text"><span
                                                                                                         style="font-size:36px;"
                                                                                                         class="wixui-rich-text__text"><span
-                                                                                                            style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                            style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                             class="wixui-rich-text__text">转</span></span></span></span>
                                                                                         </h2>
                                                                                     </div><!--/$--><!--$-->
@@ -15514,7 +15756,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">虽然有蓝的陪伴，但朱杏依然被过去束缚，封闭着内心。<br
@@ -15590,7 +15832,7 @@
                                                                                                     class="wixui-rich-text__text"><span
                                                                                                         style="font-size:36px;"
                                                                                                         class="wixui-rich-text__text"><span
-                                                                                                            style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                            style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                             class="wixui-rich-text__text">​结</span></span></span></span>
                                                                                         </h2>
                                                                                     </div><!--/$--><!--$-->
@@ -15608,7 +15850,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1; "
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">朱杏逐渐注意到了眼前的事物，虽然仍怀抱着寂寞，但也开始走向属于自己的人生。</span></span></span></span></span></span>
@@ -15625,7 +15867,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">她从紧闭的内心向前迈出了一步。</span></span></span></span></span></span>
@@ -15642,7 +15884,7 @@
                                                                                                         class="wixui-rich-text__text"><span
                                                                                                             style="color:#282626;"
                                                                                                             class="wixui-rich-text__text"><span
-                                                                                                                style="font-family: 'Noto Sans SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
+                                                                                                                style="font-family: 'Noto Serif SC', 'Source Han Serif CN', serif;font-feature-settings: 'halt' 1;"
                                                                                                                 class="wixui-rich-text__text"><span
                                                                                                                     style="letter-spacing:0em;"
                                                                                                                     class="wixui-rich-text__text">青蓝在镜子的另一端，在稍微有些距离的地方继续守护着朱杏，准备着即将到来的『告别』。</span></span></span></span></span></span>
@@ -15724,12 +15966,13 @@
                                                 style="line-height:1.79em; text-align:center; font-size:14px;"><span
                                                     style="letter-spacing:normal;" class="wixui-rich-text__text"><span
                                                         class="color_15 wixui-rich-text__text">&copy;
-                                                        <a href="https://sakeosan.wixsite.com/mirrorribbons/"
-                                                            style="color:MediumBlue">mirrorribbons</a>
-                                                        / <a href="https://sakeosan.wixsite.com/utp-portfolio"
-                                                            style="color:MediumBlue">界さけ</a>
+                                                        <a href="https://sakeosan.wixsite.com/mirrorribbons/" 　
+                                                            target="_blank" style="color:MediumBlue">mirrorribbons</a>
+                                                        / <a href="https://sakeosan.wixsite.com/utp-portfolio" 　
+                                                            target="_blank" style="color:MediumBlue">界さけ</a>
                                                         / translated by
                                                         <a href="https://space.bilibili.com/32417837?spm_id_from=333.1007.0.0"
+                                                            　 target="_blank"
                                                             style="color:MediumBlue">朝霧ラン</a></span></span></p>
                                         </div><!--/$-->
                                     </div>
@@ -16153,7 +16396,7 @@
             position: relative;
             width: 90%;
             max-width: 980px;
-            
+
             /* 保持与原网站一致的宽度 */
             background: transparent;
             padding: 40px 20px;
