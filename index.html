@@ -13696,8 +13696,38 @@
             /* 点击时轻微缩小 */
         }
 
-    
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap');
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                /* 初始位置向下偏移20px */
+            }
+
+            100% {
+                opacity: 1;
+                /* 结束位置回到原点 */
+            }
+        }
+
+        .story-section h2{
+            opacity: 0;
+            /* 初始隐藏 */
+            animation: fadeInUp 1.2s ease-out forwards;
+            /* 执行动画 */
+            animation-delay: 0.3s;
+            /* 延迟0.3秒开始 */
+        }
+
+        .story-section p{
+            opacity: 0;
+            /* 初始隐藏 */
+            animation: fadeInUp 1.2s ease-out forwards;
+            /* 执行动画 */
+            animation-delay: 0.3s;
+            /* 延迟0.3秒开始 */
+        }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap');
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14728,8 +14758,7 @@
 
                                                                 </div>
                                                                 <div id="comp-lgaz277b"
-                                                                style="margin: 0 auto;padding:20px 20px"
-
+                                                                    style="margin: 0 auto;padding:20px 20px"
                                                                     class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgaz277b wixui-rich-text"
                                                                     data-testid="richTextElement">
                                                                     <h2 class="font_4 wixui-rich-text__text"
